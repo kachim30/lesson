@@ -5,15 +5,19 @@ class Battery():
     def __init__(self, x=0):
         self.battery_size = x
 
-    def batter(self, z):
+    def batter_2(self, z):
         """для изменения запаса заряда"""
         if z < 0:
             self.battery_size -= int(z)
         elif z >= 0:
             self.battery_size += int(z)
 
-    def fers(self):
+    def print_bar(self):
         print(self.battery_size)
+
+
+
+
 
 
 

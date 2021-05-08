@@ -1,4 +1,4 @@
-from lesson98 import Battery
+###from lesson98 import Battery
 
 class Car():
     """Простая модель автомобиля."""
@@ -28,13 +28,30 @@ class ElectricCar(Car):
     def __init__(self, make, model, year):
        ### Инициализирует атрибуты класса-родителя.
         super().__init__(make, model, year)
-        self.battery_1 = Battery.battery_size
+        self.battery_1 = Battery
 
-    def print_batteri(self):
-        print(self.battery_1 + '%')
+    def print_electriCar(self):
+        print(self.battery_1.print_bar())
+
+
+class Battery():
+    """Запас тока в акумуляторе в % def upgrade_battery (x) значения  акумулятора """
+    def __init__(self, x=0):
+        self.battery_size = x
+
+    def batter_2(self, z):
+        """для изменения запаса заряда"""
+        if z < 0:
+            self.battery_size -= int(z)
+        elif z >= 0:
+            self.battery_size += int(z)
+
+    def print_bar(self):
+        print(self.battery_size)
 
 
 my_tesla = ElectricCar('tesla', 'model s', 2016)
-my_tesla.print_batteri()
-my_tesla += Battery(100)
-my_tesla.print_batteri()
+my_tesla.battery_1(30)
+my_tesla.battery_1.batter_2(34)
+my_tesla.battery_1.print_bar()
+
