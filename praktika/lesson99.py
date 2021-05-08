@@ -30,8 +30,6 @@ class ElectricCar(Car):
         super().__init__(make, model, year)
         self.battery_1 = Battery
 
-    def print_electriCar(self):
-        print(self.battery_1.print_bar())
 
 
 class Battery():
@@ -47,11 +45,11 @@ class Battery():
             self.battery_size += int(z)
 
     def print_bar(self):
-        print(self.battery_size)
+        print(str(self.battery_size))
 
 
 my_tesla = ElectricCar('tesla', 'model s', 2016)
 my_tesla.battery_1(30)
-my_tesla.battery_1.batter_2(34)
+
 my_tesla.battery_1.print_bar()
 
