@@ -13,14 +13,9 @@ class Battery():
             self.battery_size += z
 
     def print_bar(self):
-        print(self.battery_size)
+        print(str(self.battery_size) + "%")
 
 
-sdf = Battery(20)
-sdf.batter_2(30)
-sdf.print_bar()
-sdf.batter_2(-40)
-sdf.print_bar()
 
 
 

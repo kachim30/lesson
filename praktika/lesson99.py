@@ -1,4 +1,4 @@
-###from lesson98 import Battery
+from lesson98 import Battery
 
 class Car():
     """Простая модель автомобиля."""
@@ -23,35 +23,35 @@ class Car():
     def increment_odometer(self, miles):
         self.odometer_reading += miles
 
+    def info_car(self):
+        print(self.get_descriptive_name() + ' ')
+
+
 class ElectricCar(Car):
     """Представляет аспекты машины, специфические для электромобилей."""
     def __init__(self, make, model, year):
        ### Инициализирует атрибуты класса-родителя.
-        super().__init__(make, model, year)
-        self.battery_1 = Battery()
+            super().__init__(make, model, year)
+            self.battery_1 = Battery()
+
+    def info_electricCar(self):
+        print(self.get_descriptive_name() + "\n Зарядка:" + str(self.battery_1.battery_size) + '%')
 
 
 
-class Battery():
-    """Запас тока в акумуляторе в % def upgrade_battery (x) значения  акумулятора """
-    def __init__(self, x=0):
-        self.battery_size = x
-
-    def batter_2(self, z):
-        """для изменения запаса заряда"""
-        if z < -0:
-            self.battery_size -= -z
-        elif z >= 0:
-            self.battery_size += z
-
-    def print_bar(self):
-        print(self.battery_size)
 
 
 my_tesla = ElectricCar('tesla', 'model s', 2016)
+my_tesla.info_car()
 my_tesla.battery_1.batter_2(30)
+my_tesla.battery_1.print_bar()
 my_tesla.battery_1.batter_2(40)
 my_tesla.battery_1.print_bar()
-my_tesla.battery_1.batter_2(-32)
+my_tesla.battery_1.batter_2(-30)
 my_tesla.battery_1.print_bar()
 
+my_tesla.info_electricCar()
+
+my_tesla.battery_1.batter_2(-30)
+
+my_tesla.info_electricCar()
