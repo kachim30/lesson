@@ -28,7 +28,7 @@ class ElectricCar(Car):
     def __init__(self, make, model, year):
        ### Инициализирует атрибуты класса-родителя.
         super().__init__(make, model, year)
-        self.battery_1 = Battery
+        self.battery_1 = Battery()
 
 
 
@@ -39,17 +39,19 @@ class Battery():
 
     def batter_2(self, z):
         """для изменения запаса заряда"""
-        if z < 0:
-            self.battery_size -= int(z)
+        if z < -0:
+            self.battery_size -= -z
         elif z >= 0:
-            self.battery_size += int(z)
+            self.battery_size += z
 
     def print_bar(self):
-        print(str(self.battery_size))
+        print(self.battery_size)
 
 
 my_tesla = ElectricCar('tesla', 'model s', 2016)
-my_tesla.battery_1(30)
-
+my_tesla.battery_1.batter_2(30)
+my_tesla.battery_1.batter_2(40)
+my_tesla.battery_1.print_bar()
+my_tesla.battery_1.batter_2(-32)
 my_tesla.battery_1.print_bar()
 

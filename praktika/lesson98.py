@@ -7,17 +7,20 @@ class Battery():
 
     def batter_2(self, z):
         """для изменения запаса заряда"""
-        if z < 0:
-            self.battery_size -= int(z)
+        if z < -0:
+            self.battery_size -= -z
         elif z >= 0:
-            self.battery_size += int(z)
+            self.battery_size += z
 
     def print_bar(self):
         print(self.battery_size)
 
 
-
-
+sdf = Battery(20)
+sdf.batter_2(30)
+sdf.print_bar()
+sdf.batter_2(-40)
+sdf.print_bar()
 
 
 
