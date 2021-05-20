@@ -9,7 +9,7 @@ def count_words(filename):
             print(contents.rstrip())
     except FileNotFoundError:
         msg = 'Вы неправильно указали файл для открытия'
-        print(msg)
+        pass
 
 
 x = True
